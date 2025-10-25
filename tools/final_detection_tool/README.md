@@ -27,7 +27,6 @@
   <img src="example_2.jpg" alt="Tool interface" width="50%%">
   <img src="example_3.jpg" alt="Tool interface" width="10%">
 </p>
----
 
 ## Building the Software Locally
 If **SporesCounterToolByLO.exe** does not work, follow these steps:
