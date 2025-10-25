@@ -16,7 +16,6 @@
   <img src="example.jpg" alt="Tool interface" width="400">
 </p>
 
----
 
 ## How to Use
 1. Click **SELECT FOLDER** to open a navigation window to choose the images folder.  
