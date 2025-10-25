@@ -24,9 +24,11 @@
 3. Click **RUN DETECTION** to start the spore detection process in the background. A log of the run will appear on the screen.  
 4. After the run finishes, a folder with visual results will be saved by date under the selected images folder. A CSV file with the results will also be saved.  
 5. The numerical results for each image and the paths to the saved files will be displayed in the software after the run completes.
-![Alt text](example_2.jpg)
-![Alt text](example_3.jpg)
----
+<p align="center">
+  <img src="example.jpg" alt="Tool interface" width="400">
+<p align="center">
+  <img src="example.jpg" alt="Tool interface" width="200">
+</p>---
 
 ## Building the Software Locally
 If **SporesCounterToolByLO.exe** does not work, follow these steps:
