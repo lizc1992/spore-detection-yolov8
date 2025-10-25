@@ -25,10 +25,10 @@
 4. After the run finishes, a folder with visual results will be saved by date under the selected images folder. A CSV file with the results will also be saved.  
 5. The numerical results for each image and the paths to the saved files will be displayed in the software after the run completes.
 <p align="center">
-  <img src="example_2.jpg" alt="Tool interface" width="400">
-<p align="center">
-  <img src="example_3.jpg" alt="Tool interface" width="200">
-</p>---
+  <img src="example_2.jpg" alt="Tool interface" width="50%%">
+  <img src="example_3.jpg" alt="Tool interface" width="10%">
+</p>
+---
 
 ## Building the Software Locally
 If **SporesCounterToolByLO.exe** does not work, follow these steps:
