@@ -1,0 +1,5 @@
+path: dataset_aug
+train: images/train
+val: images/val
+nc: 1              # number of classes
+names: ["cell"]    # change to your class name
