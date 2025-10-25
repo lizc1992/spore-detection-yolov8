@@ -12,7 +12,9 @@
 3. Double-click on **SporesCounterToolByLO.exe**.  
 4. Wait – initial setup may take some time.  
 5. After the setup completes, the software will open.
-![Alt text](example.jpg)
+<p align="center">
+  <img src="example.jpg" alt="Tool interface" width="400">
+</p>
 
 ---
 
