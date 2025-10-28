@@ -39,16 +39,16 @@ This stage prepares raw data into the format needed for training the model.
 * Reads raw inputs (e.g., text, images, sensor logs) from `data/raw/`
 * Cleans, filters, normalises, transforms features
 * Splits data into train/validation/test sets
-* Saves processed data into `data/processed/` (or a similar directory)
+* Saves processed data into `data/processed/`
 
-### How to run
+### Manual Tagging and Mask Correction
 
-```bash
-python preprocessing/run_preprocess.py \
-  --input_dir data/raw \
-  --output_dir data/processed \
-  --config config/preprocess.yaml  
-```
+Manual tagging is performed using our in-house annotation tool.
+Each image is tagged twice:
+On the background_masked image – to mark the regions that should be added to the mask.
+On the contour_masked image – to mark the regions that should be added along the object contours.
+
+After tagging, the notebook `fix_labels_after_manual_tags.ipynb` is used to automatically re-generate updated masks incorporating these manual corrections.
 
 ## Training
 
