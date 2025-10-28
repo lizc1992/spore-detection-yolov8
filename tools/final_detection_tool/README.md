@@ -1,9 +1,9 @@
 # Instructions for SporesCounterToolByLO
 
 ## Download
-1. Download the file **SporesCounterToolByLO.exe** to your computer from [this link](https://drive.google.com/drive/folders/14Z0i4YiSbENjOxV0KX-GHlwQgtNFjSk4?usp=drive_link)
+1. Download the file **SporesCounterToolByLO.exe** to your computer from [this link](https://drive.google.com/file/d/199FjI6qQ9zdlEiJbd0Hk17Xl2AtFQbFg/view?usp=sharing)
 .  
-2. Download the example images folder named **images** from [this link](https://drive.google.com/drive/folders/14Z0i4YiSbENjOxV0KX-GHlwQgtNFjSk4?usp=drive_link).
+2. Download the example images folder named **images** from [this link](https://drive.google.com/drive/folders/1e1H4GJgur1yej2sb-ibWjjoRXeWYt-Gn?usp=sharing).
 
 ---
 
