@@ -11,10 +11,6 @@ This repository implements three main stages: **preprocessing**, **training**, a
 4. [Training](#training)
 5. [Inference](#inference)
 6. [Directory Structure](#directory-structure)
-7. [Dependencies](#dependencies)
-8. [Configuration](#configuration)
-9. [Notes & Tips](#notes-&-tips)
-10. [License](#license)
 
 ## Features
 
