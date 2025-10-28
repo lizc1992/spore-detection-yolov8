@@ -32,7 +32,7 @@
 ## Building the Software Locally
 If **SporesCounterToolByLO.exe** does not work, follow these steps:
 
-1. Download the folder **build_exe_kit** from [this link](https://drive.google.com/drive/folders/14Z0i4YiSbENjOxV0KX-GHlwQgtNFjSk4?usp=drive_link).  
+1. Download the folder **build_exe_kit** from [this link](https://drive.google.com/drive/folders/14Z0i4YiSbENjOxV0KX-GHlwQgtNFjSk4?usp=sharing).  
 2. Extract the folder.  
 3. Move it to a convenient location.  
 4. Double-click **build_windows.bat** – a command window will open.  
