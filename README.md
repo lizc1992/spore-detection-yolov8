@@ -35,7 +35,7 @@ This repository implements three main stages: **preprocessing**, **training**, a
 
 This stage prepares raw data into the format needed for training the model.
 
-1. split_images.py - split each high-resolution microscopy image (2160*3840) into four smaller patches (1080*1920)
+1. split_images.py - split each high-resolution microscopy image (2160X3840) into four smaller patches (1080X1920)
 2. Manual Tagging and Mask Correction
    Manual tagging is performed using our in-house annotation tool (`tools/spore_marking_tool.py`).
    Each image is tagged twice:
