@@ -4,7 +4,7 @@ model = YOLO("yolov8m-seg.pt")
 
 # Train
 model.train(
-    data="cells_aug.yaml",
+    data="config/cells_aug.yaml",
     epochs=200,
     imgsz=640,
     patience=20,
