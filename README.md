@@ -60,16 +60,8 @@ This stage builds the model using the processed data.
 
 ## Inference
 
-This stage loads a trained model and uses it for predictions on new/unseen data.
-
-### What it does
-
-* Loads one or more model checkpoint(s) from `models/`
-* Loads input data (raw)
-* Applies any preprocessing steps required (mirroring training)
-* Generates output predictions (e.g., class labels, probabilities, embeddings)
-* Saves results to directory.
-
+evaluation.py - This script performs evaluation of pretrained YOLOv8 segmentation model by comparing predicted masks against ground truth annotations.
+It generates per-image visualizations, computes detection metrics (Precision, Recall, F1), and saves detailed and summary results for different confidence and IoU thresholds.
 
 ## Directory Structure
 
