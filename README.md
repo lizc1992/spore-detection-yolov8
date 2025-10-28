@@ -21,8 +21,6 @@ This repository implements three main stages: **preprocessing**, **training**, a
 * Data ingestion & cleaning pipeline to convert raw input into model-ready form (preprocessing).
 * Training script with configurable hyper-parameters, checkpointing, and logging.
 * Inference module to load a trained model and apply to new data for predictions.
-* Modular design: easily extend preprocessing steps, swap architectures, or modify inference workflows.
-* (Add any additional things: e.g., “supports GPU”, “distributed training”, “handles multi-modal inputs”, etc.)
 
 ## Getting Started
 
@@ -44,7 +42,7 @@ This stage prepares raw data into the format needed for training the model.
 
 * Reads raw inputs (e.g., text, images, sensor logs) from `data/raw/`
 * Cleans, filters, normalises, transforms features
-* Splits data into train/validation/test sets (if applicable)
+* Splits data into train/validation/test sets
 * Saves processed data into `data/processed/` (or a similar directory)
 
 ### How to run
@@ -56,15 +54,6 @@ python preprocessing/run_preprocess.py \
   --config config/preprocess.yaml  
 ```
 
-### Configuration
-
-Specify settings (in `config/preprocess.yaml` or similar) such as:
-
-* Feature engineering options (e.g., which columns to drop, which transformations to apply)
-* Train/val split ratio
-* Output file formats (e.g., `.csv`, `.npz`, `.pkl`)
-* Random seed for reproducibility
-
 ## Training
 
 This stage builds the model using the processed data.
@@ -72,32 +61,16 @@ This stage builds the model using the processed data.
 ### What it does
 
 * Loads processed data from `data/processed/`
-* Instantiates a model architecture (e.g., neural network, transformer, etc.)
+* Instantiates a model architecture 
 * Defines loss, optimizer, training loop, and validation logic
 * Saves best-performing checkpoint(s) to `models/`
-* Logs training progress (loss, metrics) to console and/or to a log directory
+* Logs training progress (loss, metrics) to console and to a log directory
 
 ### How to run
 
 ```bash
-python training/train.py \
-  --config config/train.yaml \
-  --data_dir data/processed \
-  --output_dir models/ \
-  --epochs 50 \
-  --batch_size 32 \
-  --learning_rate 1e-4  
+python training/train.py 
 ```
-
-
-### Configuration
-
-In `config/train.yaml` you may set:
-
-* Model architecture type and hyper-parameters (layers, hidden units, dropout)
-* Optimizer type and settings (Adam, SGD, learning rate schedule)
-* Early stopping criteria, checkpoint frequency
-* Evaluation metrics to monitor (accuracy, F1, AUC, etc.)
 
 ## Inference
 
@@ -106,30 +79,17 @@ This stage loads a trained model and uses it for predictions on new/unseen data.
 ### What it does
 
 * Loads one or more model checkpoint(s) from `models/`
-* Loads input data (raw or processed)
+* Loads input data (raw)
 * Applies any preprocessing steps required (mirroring training)
 * Generates output predictions (e.g., class labels, probabilities, embeddings)
-* Saves results to disk or optionally returns directly (e.g., for a web service)
+* Saves results to directory.
 
 ### How to run
 
 ```bash
-python inference/run_inference.py \
-  --model_checkpoint models/best_model.pt \
-  --input_file data/new/raw_input.csv \
-  --output_file results/predictions.csv \
-  --config config/inference.yaml  
+python inference/run_inference.py 
 ```
 
-### Configuration
-
-In `config/inference.yaml`, you may specify:
-
-* Which checkpoint to load
-* Preprocessing options (same as training)
-* Batch size (for prediction)
-* Output format (csv, json, etc.)
-* Thresholds for classification (if applicable)
 
 ## Directory Structure
 
@@ -157,16 +117,3 @@ Spore/
 └── README.md
 ```
 
-## Dependencies
-
-List major dependencies (example):
-
-```text
-numpy
-pandas
-scikit-learn
-torch
-yaml
-```
-
-(See `requirements.txt` for full list.)
