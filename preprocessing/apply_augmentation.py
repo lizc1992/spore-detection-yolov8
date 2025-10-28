@@ -14,6 +14,8 @@ os.makedirs(f"{output_img_dir}/train", exist_ok=True)
 os.makedirs(f"{output_lbl_dir}/train", exist_ok=True)
 os.makedirs(f"{output_img_dir}/val", exist_ok=True)
 os.makedirs(f"{output_lbl_dir}/val", exist_ok=True)
+os.makedirs(f"{output_img_dir}/test", exist_ok=True)
+os.makedirs(f"{output_lbl_dir}/test", exist_ok=True)
 
 transform = A.Compose([
     A.HorizontalFlip(p=0.5),
@@ -102,7 +104,14 @@ def normalize_polygon(poly_px, w, h):
 
 if __name__ == "__main__":
     for img_path in tqdm(glob(f"{input_dir}/*/*.png")):
-        status = "train" if "train" in img_path else "val"
+        if "train" in img_path:
+            status = "train"
+        elif "val" in img_path:
+            status = "val"
+        elif "test" in img_path:
+            status = "test"
+        else:
+            status = "unknown"
         label_path = img_path.replace("images", "labels").replace(".png", ".txt")
         if not os.path.exists(label_path):
             continue
