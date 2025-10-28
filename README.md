@@ -34,21 +34,16 @@ This repository implements three main stages: **preprocessing**, **training**, a
 
 This stage prepares raw data into the format needed for training the model.
 
-### What it does
+1. split_images.py - split each high-resolution microscopy image (2160*3840) into four smaller patches (1080*1920)
+2. Manual Tagging and Mask Correction
+   Manual tagging is performed using our in-house annotation tool (`tools/spore_marking_tool.py`).
+   Each image is tagged twice:
+     On the background_masked image – to mark the regions that should be added to the mask.
+     On the contour_masked image – to mark the regions that should be added along the object contours.
+   After tagging, the notebook `fix_labels_after_manual_tags.ipynb` is used to automatically re-generate updated masks incorporating these manual corrections.
+3. convert_json_to_yolo8seg_format.py - This script converts manually tagged annotation files (typically in JSON format) into the YOLOv8 segmentation format, which is required for model training.
+4. apply_augmentation.py - Applied extensive data augmentation using the `Albumentations` library.
 
-* Reads raw inputs (e.g., text, images, sensor logs) from `data/raw/`
-* Cleans, filters, normalises, transforms features
-* Splits data into train/validation/test sets
-* Saves processed data into `data/processed/`
-
-### Manual Tagging and Mask Correction
-
-Manual tagging is performed using our in-house annotation tool.
-Each image is tagged twice:
-On the background_masked image – to mark the regions that should be added to the mask.
-On the contour_masked image – to mark the regions that should be added along the object contours.
-
-After tagging, the notebook `fix_labels_after_manual_tags.ipynb` is used to automatically re-generate updated masks incorporating these manual corrections.
 
 ## Training
 
@@ -56,17 +51,12 @@ This stage builds the model using the processed data.
 
 ### What it does
 
-* Loads processed data from `data/processed/`
+* Loads processed data
 * Instantiates a model architecture 
 * Defines loss, optimizer, training loop, and validation logic
 * Saves best-performing checkpoint(s) to `models/`
 * Logs training progress (loss, metrics) to console and to a log directory
 
-### How to run
-
-```bash
-python training/train.py 
-```
 
 ## Inference
 
@@ -80,12 +70,6 @@ This stage loads a trained model and uses it for predictions on new/unseen data.
 * Generates output predictions (e.g., class labels, probabilities, embeddings)
 * Saves results to directory.
 
-### How to run
-
-```bash
-python inference/run_inference.py 
-```
-
 
 ## Directory Structure
 
@@ -93,22 +77,19 @@ python inference/run_inference.py
 Spore/
 ├── data/
 │   ├── raw/
-│   ├── processed/
-│   └── new/                
+│   ├── processed/               
 ├── config/
-│   ├── preprocess.yaml
-│   ├── train.yaml
-│   └── inference.yaml
+│   ├── cells_aug.yaml
+│   └── evaluation.yaml
 ├── preprocessing/
-│   └── run_preprocess.py
+│   ├── split_images.py
+│   ├── fix_labels_after_manual_tags.ipynb
+│   ├── convert_json_to_yolo8seg_format.py
+│   └── apply_augmentation.py
 ├── training/
 │   └── train.py
 ├── inference/
-│   └── run_inference.py
-├── models/
-│   └── best_model.pt
-├── results/
-│   └── predictions.csv
+│   └── evaluation.py
 ├── requirements.txt
 └── README.md
 ```
