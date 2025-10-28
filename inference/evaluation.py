@@ -13,7 +13,7 @@ def setup_logging(level="INFO"):
                         format="%(asctime)s - %(levelname)s - %(message)s")
 
 
-def load_config(path="config/inference.yaml"):
+def load_config(path="config/evaluation.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
 
