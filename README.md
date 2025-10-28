@@ -1,6 +1,6 @@
 # Spores Counter Tool by LO
 
-A machine-learning framework for … *(brief description of what the model does: e.g., “classifying X from Y”, “generative modelling of Z”, etc.)*
+AI-based Method for Detecting and Counting Bacterial Spores in Microscopy Images.
 This repository implements three main stages: **preprocessing**, **training**, and **inference**.
 
 ## Table of Contents
