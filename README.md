@@ -10,7 +10,7 @@ This repository implements three main stages: **preprocessing**, **training**, a
 3. [Preprocessing](#preprocessing)
 4. [Training](#training)
 5. [Inference](#inference)
-6. [Spores Counter Tool](#executable)
+6. [Spores Counter Tool](#spores-counter-tool)
 7. [Directory Structure](#directory-structure)
 
 ## Features
@@ -64,7 +64,7 @@ This stage builds the model using the processed data.
 evaluation.py - This script performs evaluation of pretrained YOLOv8 segmentation model by comparing predicted masks against ground truth annotations.
 It generates per-image visualizations, computes detection metrics (Precision, Recall, F1), and saves detailed and summary results for different confidence and IoU thresholds.
 
-## Spores Counter Tool (Executable)
+## Spores Counter Tool
 
 A graphical user interface (GUI) version of the detector is available for non-technical users.
 For full usage instructions, troubleshooting, and build options, please refer to the dedicated documentation:
